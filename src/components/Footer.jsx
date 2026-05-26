@@ -15,7 +15,7 @@ export default function Footer() {
       }}/>
 
       <div className="container">
-        <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr', gap:48, marginBottom:48 }}>
+        <div className="grid-footer">
 
           {/* BRAND */}
           <div>
@@ -86,7 +86,6 @@ export default function Footer() {
         </div>
       </div>
 
-      <style>{`@media(max-width:768px){footer .ft-grid{grid-template-columns:1fr!important}}`}</style>
     </footer>
   )
 }

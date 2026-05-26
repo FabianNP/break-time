@@ -43,7 +43,7 @@ export default function CharacterPage() {
         >← VOLVER / GUARDIANES</button>
 
         {/* TWO-COL LAYOUT */}
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1.6fr', gap:48, alignItems:'start' }}>
+        <div className="grid-char-page">
 
           {/* ── LEFT ── */}
           <div>

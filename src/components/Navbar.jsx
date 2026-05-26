@@ -104,12 +104,6 @@ export default function Navbar() {
         </div>
       )}
 
-      <style>{`
-        @media(max-width:768px){
-          .hide-mobile{display:none!important}
-          .show-mobile{display:flex!important}
-        }
-      `}</style>
     </nav>
   )
 }

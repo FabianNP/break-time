@@ -74,7 +74,7 @@ function Hero() {
           </div>
 
           {/* STATS */}
-          <div style={{ display:'flex', gap:44, marginTop:56, flexWrap:'wrap' }}>
+          <div className="hero-stats">
             {[['4+','Personajes únicos'],['∞','Líneas temporales'],['2D','Pixel art']].map(([v,l])=>(
               <div key={l}>
                 <div style={{ fontFamily:'var(--font-display)', fontSize:'1.9rem', fontWeight:900, color:'var(--neon-purple)', textShadow:'0 0 24px rgba(139,43,226,0.6)' }}>{v}</div>
@@ -116,11 +116,11 @@ function FeatureStrip() {
     { icon:'🎮', label:'Pixel Art 2D',       desc:'Arte fotograma a fotograma con alma propia' },
   ]
   return (
-    <div style={{ borderTop:'1px solid var(--border)', borderBottom:'1px solid var(--border)', background:'var(--deep)', padding:'48px 0' }}>
+    <div style={{ borderTop:'1px solid var(--border)', borderBottom:'1px solid var(--border)', background:'var(--deep)', padding:'48px 0', overflow:'hidden' }}>
       <div className="container">
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:1 }}>
+        <div className="grid-features">
           {items.map((item,i)=>(
-            <div key={i} style={{ padding:'28px 22px', borderLeft: i>0?'1px solid var(--border)':'none', textAlign:'center' }}>
+            <div key={i} style={{ padding:'28px 22px', textAlign:'center', background:'var(--deep)' }}>
               <div style={{ fontSize:30, marginBottom:12 }}>{item.icon}</div>
               <div style={{ fontFamily:'var(--font-display)', fontSize:'0.6rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', color:'var(--neon-blue)', marginBottom:8 }}>{item.label}</div>
               <div style={{ fontFamily:'var(--font-body)', fontSize:'0.85rem', color:'var(--text-dim)', lineHeight:1.5 }}>{item.desc}</div>
@@ -152,7 +152,7 @@ function LoreSection() {
           {LORE.subtitle}
         </p>
 
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 2fr', gap:36 }}>
+        <div className="grid-lore">
           {/* TABS */}
           <div style={{ display:'flex', flexDirection:'column', gap:4 }}>
             {LORE.chapters.map((ch,i)=>(
@@ -173,7 +173,7 @@ function LoreSection() {
           </div>
 
           {/* CONTENT */}
-          <div className="px-corner" style={{ background:'var(--panel)', border:'1px solid var(--border)', padding:'36px 40px', position:'relative', overflow:'hidden' }}>
+          <div className="px-corner lore-content" style={{ background:'var(--panel)', border:'1px solid var(--border)', position:'relative', overflow:'hidden' }}>
             <div style={{ position:'absolute', top:0, left:0, right:0, height:3, background:'linear-gradient(90deg,var(--neon-purple),var(--neon-blue))' }}/>
             <div style={{ fontFamily:'var(--font-mono)', fontSize:'0.58rem', letterSpacing:'0.3em', color:'var(--neon-blue)', marginBottom:14 }}>
               ARCHIVO_{String(LORE.chapters[active].id).padStart(3,'0')}.LOG

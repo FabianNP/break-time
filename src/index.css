@@ -22,14 +22,16 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 body {
   background-color: var(--void);
   color: var(--text-primary);
   font-family: var(--font-body);
   overflow-x: hidden;
+  max-width: 100%;
   cursor: crosshair;
 }
+main { overflow-x: hidden; }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--void); }
@@ -52,7 +54,7 @@ a { color: inherit; text-decoration: none; }
 
 /* LAYOUT */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 100px 0; position: relative; }
+.section { padding: 100px 0; position: relative; overflow-x: hidden; }
 
 /* TYPOGRAPHY UTILS */
 .glow-purple { text-shadow: 0 0 8px var(--neon-purple), 0 0 20px var(--neon-purple), 0 0 50px rgba(139,43,226,0.4); }
@@ -138,8 +140,80 @@ a { color: inherit; text-decoration: none; }
 .anim-flicker  { animation: flicker 7s infinite; }
 .anim-spin     { animation: spin-slow 20s linear infinite; }
 
-/* RESPONSIVE */
+/* ─── RESPONSIVE GRIDS (mobile-first) ─── */
+
+.grid-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--border);
+  gap: 1px;
+}
+
+.grid-lore {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.grid-char-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.lore-content { padding: 28px 22px; }
+
+/* ─── TABLET+ ─── */
+@media (min-width: 640px) {
+  .grid-char-page { grid-template-columns: 1fr 1.6fr; gap: 48px; }
+  .lore-content   { padding: 36px 40px; }
+}
+
+/* ─── DESKTOP ─── */
+@media (min-width: 768px) {
+  .grid-features { grid-template-columns: repeat(4, 1fr); }
+  .grid-lore     { grid-template-columns: 1fr 2fr; gap: 36px; }
+  .grid-footer   { grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  .hero-stats    { gap: 44px; margin-top: 56px; }
+}
+
+/* ─── BREAKPOINTS ─── */
 @media (max-width: 768px) {
-  .section { padding: 60px 0; }
+  .section     { padding: 60px 0; }
+  .container   { padding: 0 16px; }
   .hide-mobile { display: none !important; }
+  .show-mobile { display: flex !important; }
+  .sec-divider { margin-bottom: 32px; }
+}
+
+@media (max-width: 480px) {
+  .section   { padding: 44px 0; }
+  .container { padding: 0 14px; }
+
+  /* sec-divider: hide decorative lines, let heading wrap and center */
+  .sec-divider {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .sec-divider h2 {
+    white-space: normal !important;
+    text-align: center;
+  }
+  .sec-divider-line { display: none; }
 }
