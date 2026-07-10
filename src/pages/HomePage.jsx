@@ -75,7 +75,7 @@ function Hero() {
 
           {/* STATS */}
           <div className="hero-stats">
-            {[['4+','Personajes únicos'],['∞','Líneas temporales'],['2D','Pixel art']].map(([v,l])=>(
+            {[[`${CHARACTERS.length}`,'Personajes únicos'],['∞','Líneas temporales'],['2D','Pixel art']].map(([v,l])=>(
               <div key={l}>
                 <div style={{ fontFamily:'var(--font-display)', fontSize:'1.9rem', fontWeight:900, color:'var(--neon-purple)', textShadow:'0 0 24px rgba(139,43,226,0.6)' }}>{v}</div>
                 <div style={{ fontFamily:'var(--font-mono)', fontSize:'0.6rem', color:'var(--text-dim)', letterSpacing:'0.15em', textTransform:'uppercase' }}>{l}</div>
@@ -209,7 +209,7 @@ function CharactersSection() {
         </div>
 
         <p style={{ textAlign:'center', fontFamily:'var(--font-body)', fontSize:'1.05rem', color:'var(--text-secondary)', maxWidth:520, margin:'0 auto 60px', lineHeight:1.8 }}>
-          Cuatro guardianes. Cuatro eras. Un objetivo: sobrevivir a la ruptura. Haz clic para conocer su historia.
+          Diez guardianes. Historias separadas que se cruzan a través de las mismas grietas. Haz clic para conocer su historia.
         </p>
 
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))', gap:22 }}>
