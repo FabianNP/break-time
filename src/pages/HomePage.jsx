@@ -69,8 +69,8 @@ function Hero() {
           </p>
 
           <div style={{ display:'flex', gap:16, flexWrap:'wrap' }}>
-            <a href="#download" className="btn btn-primary">⬇ Descargar Gratis</a>
-            <a href="#lore"     className="btn btn-outline" style={{ padding:'14px 32px' }}>▶ Conocer el Lore</a>
+            {/* <a href="#download" className="btn btn-primary">⬇ Descargar Gratis</a> en pausa: todavía no está en Play Store */}
+            <a href="#lore" className="btn btn-primary">▶ Conocer el Lore</a>
           </div>
 
           {/* STATS */}
@@ -246,7 +246,11 @@ function CharCard({ char, onClick }) {
         position:'relative', overflow:'hidden', borderBottom:'1px solid var(--border)',
       }}>
         <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px)', backgroundSize:'20px 20px' }}/>
-        <div style={{ fontSize:70, animation:hov?'float 3s ease-in-out infinite':'none', filter:`drop-shadow(0 0 18px ${char.color})`, position:'relative' }}>{char.emoji}</div>
+        {char.sprite ? (
+          <img src={char.sprite} alt={char.name} style={{ height:'85%', maxWidth:'80%', objectFit:'contain', animation:hov?'float 3s ease-in-out infinite':'none', filter:`drop-shadow(0 0 18px ${char.color})`, position:'relative', imageRendering:'pixelated' }}/>
+        ) : (
+          <div style={{ fontSize:70, animation:hov?'float 3s ease-in-out infinite':'none', filter:`drop-shadow(0 0 18px ${char.color})`, position:'relative' }}>{char.emoji}</div>
+        )}
         <div style={{ position:'absolute', top:10, left:10, background:'rgba(0,0,0,0.75)', border:`1px solid ${char.color}`, padding:'3px 9px', fontFamily:'var(--font-mono)', fontSize:'0.5rem', color:char.color, letterSpacing:'0.1em' }}>{char.era}</div>
         <div style={{ position:'absolute', top:10, right:10, background:'rgba(0,0,0,0.75)', border:'1px solid var(--border)', padding:'3px 9px', fontFamily:'var(--font-mono)', fontSize:'0.5rem', color:'var(--text-secondary)', letterSpacing:'0.1em' }}>{char.roleIcon} {char.role}</div>
       </div>
@@ -256,7 +260,7 @@ function CharCard({ char, onClick }) {
         <div style={{ fontFamily:'var(--font-title)', fontSize:'0.78rem', color:char.color, marginBottom:11, letterSpacing:'0.04em' }}>{char.title}</div>
         <p style={{ fontFamily:'var(--font-body)', fontSize:'0.83rem', color:'var(--text-dim)', lineHeight:1.6, marginBottom:14 }}>{char.description}</p>
 
-        {/* SKINS */}
+        {/* SKINS — en pausa hasta definir el contenido final, ver gameData.js
         <div style={{ display:'flex', gap:5, marginBottom:14, alignItems:'center' }}>
           {char.skins.map(s=>(
             <div key={s.name} title={`${s.name} · ${s.rarity}`} style={{ width:18, height:18, borderRadius:2, background:s.color, border:'1px solid rgba(255,255,255,0.1)', cursor:'pointer', transition:'transform 0.2s', opacity:0.82 }}
@@ -266,6 +270,7 @@ function CharCard({ char, onClick }) {
           ))}
           <span style={{ fontFamily:'var(--font-mono)', fontSize:'0.55rem', color:'var(--text-dim)', marginLeft:4 }}>{char.skins.length} skins</span>
         </div>
+        */}
 
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between' }}>
           <span style={{ fontFamily:'var(--font-mono)', fontSize:'0.55rem', color:'var(--text-dim)' }}>Dif: {char.difficulty}</span>
@@ -277,6 +282,9 @@ function CharCard({ char, onClick }) {
 }
 
 /* ═══════════════════════════════════════════════════ DOWNLOAD */
+// Sección de descarga en pausa: el juego todavía no está publicado en Play Store.
+// La página se publica igual para que la gente se integre con la historia primero.
+/*
 function DownloadSection() {
   return (
     <section className="section" id="download" style={{ background:'var(--void)', borderTop:'1px solid var(--border)', position:'relative', overflow:'hidden' }}>
@@ -330,6 +338,7 @@ function DownloadSection() {
     </section>
   )
 }
+*/
 
 /* ══════════════════════════════════════════════════ HOME PAGE */
 export default function HomePage() {
@@ -339,7 +348,7 @@ export default function HomePage() {
       <FeatureStrip />
       <LoreSection />
       <CharactersSection />
-      <DownloadSection />
+      {/* <DownloadSection /> en pausa: todavía no está en Play Store */}
     </>
   )
 }

@@ -52,7 +52,7 @@ export default function Footer() {
             <h4 style={{ fontFamily:'var(--font-display)', fontSize:'0.55rem', letterSpacing:'0.3em', textTransform:'uppercase', color:'var(--neon-blue)', marginBottom:20 }}>
               Explorar
             </h4>
-            {[{l:'Inicio',href:'/'},{l:'Lore',href:'/#lore'},{l:'Personajes',href:'/#characters'},{l:'Descargar',href:'/#download'}].map(item=>(
+            {[{l:'Inicio',href:'/'},{l:'Lore',href:'/#lore'},{l:'Personajes',href:'/#characters'}/*,{l:'Descargar',href:'/#download'} en pausa: todavía no está en Play Store*/].map(item=>(
               <a key={item.l} href={item.href} style={{ display:'block', color:'var(--text-dim)', fontFamily:'var(--font-body)', fontSize:'0.9rem', marginBottom:11, transition:'color 0.2s' }}
                 onMouseEnter={e=>e.target.style.color='var(--text-primary)'}
                 onMouseLeave={e=>e.target.style.color='var(--text-dim)'}

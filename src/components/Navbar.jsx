@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { label: 'Inicio',       href: '/'           },
   { label: 'Lore',         href: '/#lore'      },
   { label: 'Personajes',   href: '/#characters' },
-  { label: 'Descargar',    href: '/#download'  },
+  // { label: 'Descargar',    href: '/#download'  }, // en pausa: todavía no está en Play Store
 ]
 
 export default function Navbar() {
@@ -64,11 +64,13 @@ export default function Navbar() {
               >{l.label}</a>
             </li>
           ))}
+          {/* Botón de descarga en pausa: todavía no está en Play Store
           <li>
             <a href="/#download" className="btn btn-primary" style={{ fontSize:'0.58rem', padding:'9px 18px' }}>
               ⬇ Descargar
             </a>
           </li>
+          */}
         </ul>
 
         {/* ── HAMBURGER ── */}

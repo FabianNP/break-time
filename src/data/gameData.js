@@ -1,3 +1,12 @@
+import vexSprite        from "../assets/characters/vex.png";
+import jennSprite        from "../assets/characters/jenn.png";
+import soulknightSprite  from "../assets/characters/soulknight.png";
+import phantomSprite     from "../assets/characters/phantom.png";
+import venusSprite       from "../assets/characters/venus.png";
+import axionSprite       from "../assets/characters/axion.png";
+import tharnSprite       from "../assets/characters/tharn.png";
+// Zara, Dusk y Elite Guard todavía no tienen sprite — usan el emoji como fallback.
+
 export const LORE = {
   title: "La Ruptura Temporal",
   subtitle: "El fin del tiempo… o su reinicio",
@@ -33,6 +42,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "🤠",
+    sprite: vexSprite,
     color: "#c9a227",
     accent: "#0ea5e9",
     description: "Un cazarrecompensas que interrumpió el asedio a una familia inocente y pagó el precio con su propio cuerpo. Una grieta lo salvó a tiempo — y lo devolvió con partes de un futuro imposible.",
@@ -54,6 +64,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "👼",
+    sprite: jennSprite,
     color: "#22d3a0",
     accent: "#c9a227",
     description: "Una guerrera alada que perdió a su pareja en una misión sin respuestas. Cuando algo maligno despierta cerca del lugar donde desapareció, es ella la única que puede ir a investigar.",
@@ -75,6 +86,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "⚰️",
+    sprite: soulknightSprite,
     color: "#ef4444",
     accent: "#8b2be2",
     description: "Una armadura encantada que absorbía el poder de cada enemigo caído — hasta que ella misma murió y quedó habitada por siglos de sed de venganza. Su liberación es lo que puso en alerta al reino de los cielos.",
@@ -96,6 +108,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "👻",
+    sprite: phantomSprite,
     color: "#a78bfa",
     accent: "#38bdf8",
     description: "Un alma tímida y poderosa que no recuerda quién fue. Murió en la misma guerra santa que dio origen a SoulKnight, pero quedó separada del resto de las almas dentro del castillo — por una razón que nadie conoce todavía.",
@@ -117,6 +130,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "🌟",
+    sprite: venusSprite,
     color: "#0ea5e9",
     accent: "#c9a227",
     description: "Una investigadora enferma que desapareció frente a los ojos de su hermana el día de la Ruptura, fusionada en pleno vuelo con una estrella moribunda. Cayó en una época antigua sin memoria de quién fue.",
@@ -138,6 +152,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "👾",
+    sprite: null, // TODO: agregar sprite de Zara
     color: "#22d3a0",
     accent: "#0ea5e9",
     description: "Una investigadora computacional que sobrevivió a la tragedia que se llevó a su hermana. Reconstruida por una corporación con la misma tecnología que causó el desastre, ahora puede leer y hackear las grietas del tiempo.",
@@ -159,6 +174,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "🧙",
+    sprite: null, // TODO: agregar sprite de Dusk
     color: "#8b2be2",
     accent: "#c9a227",
     description: "Un mago de una era aún más remota que las grandes guerras, que estudió las artes místicas en soledad hasta dominar una grieta temporal a voluntad.",
@@ -180,6 +196,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "🗿",
+    sprite: tharnSprite,
     color: "#8a8378",
     accent: "#0ea5e9",
     description: "Un golem de piedra creado por Dusk para hacerle compañía y protegerlo, animado por un núcleo de cristal cuya verdadera naturaleza — un fragmento del tiempo mismo — nadie conocía todavía.",
@@ -201,6 +218,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "🤖",
+    sprite: axionSprite,
     color: "#0ea5e9",
     accent: "#22d3a0",
     description: "Un robot de combate y reconocimiento construido por Zara con los recursos de la corporación, alimentado por un fragmento de energía temporal.",
@@ -222,6 +240,7 @@ export const CHARACTERS = [
     roleIcon: "❔",
     difficulty: "—",
     emoji: "🎯",
+    sprite: null, // TODO: agregar sprite de Elite Guard
     color: "#94a3b8",
     accent: "#ef4444",
     description: "Un soldado de élite enviado por la corporación para eliminar cualquier amenaza contra su proyecto principal. Ahora persigue a Zara a través de las brechas temporales, siguiendo su rastro.",
